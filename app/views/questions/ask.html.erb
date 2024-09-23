@@ -1,0 +1,13 @@
+<h1>Ask the Coach</h1>
+<form action="/answer" method="post" data-turbo="false">
+  <input type="text" name="question" placeholder="Dare ask...">
+  <input type="submit" value="Ask!">
+</form>
+
+
+<h1>Ask the Coach</h1>
+<%= form_with(url: '/answer', method: :post, local: true, data: { turbo: false }) do %>
+  <%= label_tag :question, "Your Question:" %>
+  <%= text_field_tag :question, nil, placeholder: "Would you dare ask..." %>
+  <%= submit_tag "Ask!" %>
+<% end %>
